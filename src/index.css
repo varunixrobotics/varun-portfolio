@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-blue: #00fff9; /* Updated to Immersive UI vibrant cyan */
+  --color-cyber-purple: #ff00c1; /* Updated to match Immersive UI neon pink/magenta */
+  --color-cyber-dark: #020617; /* Immersive UI slate-950 color */
+  --color-cyber-slate: #0b0f19;
+  --color-cyber-pink: #ff00c1;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scanline: scanline 8s linear infinite;
+}
+
+@layer utilities {
+  /* Dynamic Mesh Gradient from Immersive UI theme guidelines */
+  .mesh-gradient {
+    background: radial-gradient(at 0% 0%, #1e1b4b 0, transparent 50%), 
+                radial-gradient(at 100% 100%, #312e81 0, transparent 50%),
+                radial-gradient(at 50% 50%, #020617 0, transparent 100%);
+  }
+
+  /* Carbon Fibre texture pattern integration */
+  .carbon-fibre {
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+  }
+
+  /* High-tech glassmorphism matching Immersive UI pattern */
+  .cyber-panel {
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 249, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .cyber-panel:hover {
+    border-color: rgba(0, 255, 249, 0.4);
+    box-shadow: 0 0 25px rgba(0, 255, 249, 0.15);
+  }
+
+  /* Specific Immersive Theme Card Gradients */
+  .cyber-featured-panel {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  /* Glowing effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(0, 255, 249, 0.3), inset 0 0 5px rgba(0, 255, 249, 0.15);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(255, 0, 193, 0.3), inset 0 0 5px rgba(255, 0, 193, 0.15);
+  }
+
+  .glow-text-blue {
+    text-shadow: 0 0 10px rgba(0, 255, 249, 0.5), 0 0 2px rgba(0, 255, 249, 0.8);
+  }
+
+  .glow-text-purple {
+    text-shadow: 0 0 10px rgba(255, 0, 193, 0.5), 0 0 2px rgba(255, 0, 193, 0.8);
+  }
+
+  /* Scanline sweep styling from Immersive theme */
+  .cyber-scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cyber-scanlines::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 10;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+  }
+
+  .scanline-immersive {
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 249, 0.1);
+    position: absolute;
+    z-index: 5;
+    animation: scanline-bounce 6s linear infinite;
+  }
+
+  /* Cyber Grid */
+  .cyber-grid {
+    background-size: 50px 50px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 255, 249, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 255, 249, 0.04) 1px, transparent 1px);
+    background-position: center;
+  }
+
+  .cyber-grid-dots {
+    background-size: 25px 25px;
+    background-image: radial-gradient(rgba(0, 255, 249, 0.08) 1px, transparent 1px);
+  }
+
+  /* Custom Scrollbar for premium dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 249, 0.15);
+    border-radius: 4px;
+    border: 2px solid #020617;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 249, 0.4);
+  }
+
+  /* Hide native cursor globally — replaced by CyberCursor */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Animations specifications */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes scanline-bounce {
+  0%, 100% {
+    top: 5%;
+  }
+  50% {
+    top: 95%;
+  }
+}
+
+/* Core Cyber Logo Glitch Style matching Immersive Theme */
+.glitch-logo-container {
+  position: relative;
+}
+
+.glitch-logo-wrapper {
+  position: relative;
+}
+
+.glitch-logo-base {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;  /* Suppresses Google Lens image search icon */
+  -webkit-user-drag: none;
+}
+
+.glitch-logo-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.glitch-logo-cyan {
+  left: 2px;
+  filter: drop-shadow(-3px -1px 0 #00fff9) hue-rotate(15deg);
+  animation: logo-glitch-1 3.2s infinite linear alternate-reverse;
+}
+
+.glitch-logo-magenta {
+  left: -2px;
+  filter: drop-shadow(3px 2px 0 #ff00c1) hue-rotate(-15deg);
+  animation: logo-glitch-2 2.7s infinite linear alternate-reverse;
+}
+
+@keyframes logo-glitch-1 {
+  0% {
+    clip-path: inset(54% 0 41% 0);
+    transform: skew(-2deg);
+  }
+  10% {
+    clip-path: inset(12% 0 85% 0);
+  }
+  20% {
+    clip-path: inset(88% 0 2% 0);
+    transform: skew(1deg);
+  }
+  30% {
+    clip-path: inset(34% 0 62% 0);
+  }
+  40% {
+    clip-path: inset(76% 0 13% 0);
+    transform: skew(-1deg);
+  }
+  50% {
+    clip-path: inset(2% 0 95% 0);
+  }
+  60% {
+    clip-path: inset(90% 0 5% 0);
+  }
+  70% {
+    clip-path: inset(15% 0 80% 0);
+    transform: skew(2deg);
+  }
+  80% {
+    clip-path: inset(45% 0 45% 0);
+  }
+  90% {
+    clip-path: inset(5% 0 90% 0);
+  }
+  100% {
+    clip-path: inset(67% 0 24% 0);
+    transform: skew(0deg);
+  }
+}
+
+@keyframes logo-glitch-2 {
+  0% {
+    clip-path: inset(15% 0 80% 0);
+    transform: skew(1deg);
+  }
+  10% {
+    clip-path: inset(85% 0 5% 0);
+  }
+  20% {
+    clip-path: inset(40% 0 55% 0);
+    transform: skew(-2deg);
+  }
+  30% {
+    clip-path: inset(72% 0 18% 0);
+  }
+  40% {
+    clip-path: inset(3% 0 94% 0);
+    transform: skew(2deg);
+  }
+  50% {
+    clip-path: inset(62% 0 35% 0);
+  }
+  60% {
+    clip-path: inset(12% 0 83% 0);
+  }
+  70% {
+    clip-path: inset(92% 0 1% 0);
+    transform: skew(-1deg);
+  }
+  80% {
+    clip-path: inset(51% 0 42% 0);
+  }
+  90% {
+    clip-path: inset(22% 0 71% 0);
+  }
+  100% {
+    clip-path: inset(38% 0 58% 0);
+    transform: skew(1deg);
+  }
+}
+
+/* Futuristic HUD and borders */
+.hud-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #00fff9;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.hud-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.hud-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.hud-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.hud-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.hud-purple .hud-corner {
+  border-color: #ff00c1;
+}
+
+/* Audio wave visualization animation */
+@keyframes audio-bounce {
+  0%, 100% { height: 4px; }
+  50% { height: 24px; }
+}
+
+.audio-bar {
+  width: 3px;
+  background-color: #00fff9;
+  animation: audio-bounce 1.2s ease-in-out infinite;
+}
+.audio-bar:nth-child(2) { animation-delay: 0.15s; }
+.audio-bar:nth-child(3) { animation-delay: 0.3s; }
+.audio-bar:nth-child(4) { animation-delay: 0.45s; }
+.audio-bar:nth-child(5) { animation-delay: 0.05s; }
+.audio-bar:nth-child(6) { animation-delay: 0.25s; }
+
+
+/* ============================================================
+   CYBER CURSOR — Custom targeting reticle
+   ============================================================ */
+
+.cyber-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: #00fff9;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  will-change: transform;
+  /* Only transition non-transform properties */
+  transition:
+    opacity 0.15s ease,
+    background 0.2s ease,
+    width 0.15s ease,
+    height 0.15s ease,
+    box-shadow 0.2s ease;
+  box-shadow:
+    0 0 6px #00fff9,
+    0 0 14px rgba(0, 255, 249, 0.5);
+}
+
+.cyber-cursor-dot.visible { opacity: 1; }
+
+.cyber-cursor-dot.hovering {
+  width: 8px;
+  height: 8px;
+  background: #ff00c1;
+  box-shadow:
+    0 0 8px #ff00c1,
+    0 0 18px rgba(255, 0, 193, 0.6);
+}
+
+.cyber-cursor-dot.clicking {
+  width: 4px;
+  height: 4px;
+  box-shadow:
+    0 0 14px #00fff9,
+    0 0 30px rgba(0, 255, 249, 0.8);
+}
+
+/* ---- Outer targeting ring ---- */
+.cyber-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(0, 255, 249, 0.65);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999998;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    opacity 0.15s ease,
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease,
+    border-width 0.2s ease;
+}
+
+.cyber-cursor-ring.visible { opacity: 1; }
+
+.cyber-cursor-ring.hovering {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(255, 0, 193, 0.7);
+  border-width: 1.5px;
+}
+
+.cyber-cursor-ring.clicking {
+  width: 26px;
+  height: 26px;
+  border-color: rgba(0, 255, 249, 0.9);
+  border-width: 2px;
+}
+
+/* ---- Tick marks (N / S / E / W) ---- */
+.ring-tick {
+  position: absolute;
+  background: #00fff9;
+  pointer-events: none;
+  transition: background 0.25s ease;
+}
+
+.cyber-cursor-ring.hovering .ring-tick {
+  background: #ff00c1;
+}
+
+/* North / South — vertical ticks */
+.tick-n, .tick-s {
+  width: 1px;
+  height: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tick-n { top: -1px; }
+.tick-s { bottom: -1px; }
+
+/* East / West — horizontal ticks */
+.tick-e, .tick-w {
+  width: 5px;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tick-e { right: -1px; }
+.tick-w { left: -1px; }

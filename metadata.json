@@ -1,0 +1,8 @@
+{
+  "name": "Varunix Robotics",
+  "description": "A premium, futuristic portfolio website for Varunix Robotics, featuring interactive cybernetic designs, a dynamic canvas particle system, ambient music, and high-tech project walkthroughs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
