@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Cpu, Terminal, Shield, ArrowUp, Mail, Linkedin, Github } from "lucide-react";
+import { Cpu, Terminal, Shield, ArrowUp, Mail, Linkedin, Github, Youtube, Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -14,15 +14,15 @@ export default function Footer() {
   };
 
   return (
-    <footer 
-      id="portfolio-footer-section" 
+    <footer
+      id="portfolio-footer-section"
       className="relative bg-transparent border-t border-white/5 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Decorative cyber grid in footer background */}
       <div className="absolute inset-0 cyber-grid opacity-5 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Top Segment: Brand logo text and scroll back button */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-10 pb-8 border-b border-white/5 gap-6">
           <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export default function Footer() {
               <span className="font-mono text-xs text-cyber-purple ml-2 tracking-widest font-bold">ROBOTICS</span>
             </div>
           </div>
-          
+
           {/* Scroll to Top Action Button */}
           <button
             onClick={scrollToTop}
@@ -46,68 +46,89 @@ export default function Footer() {
 
         {/* Center Grid: Navigation links, Telemetry stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          
-          {/* Left Block: Brief and Socials */}
+
+          {/* Block 1: Brief and Socials */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">01 // BRAND CORE</h4>
-            <p className="font-sans text-xs text-gray-400 leading-relaxed">
+            <h4 className="font-mono text-[11px] text-cyber-purple font-bold uppercase tracking-widest">I may do these</h4>
+            <p className="font-sans text-xs text-gray-200 leading-relaxed font-medium">
               Engineering advanced cybernetics and micro-actuators for harsh, extreme, and orbital operations. Custom systems engineered on demand.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a 
-                href="mailto:varunix.robotics@gmail.com" 
-                className="p-2 border border-white/10 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-400 transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center"
+              <a
+                href="mailto:varunix.robotics@gmail.com"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
                 aria-label="Email Contact"
               >
                 <Mail className="w-4 h-4" />
               </a>
-              <a 
-                href="#" 
-                className="p-2 border border-white/10 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-400 transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center"
+              <a
+                href="#"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a 
-                href="https://github.com/varunixrobotics" 
-                className="p-2 border border-white/10 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-400 transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center"
+              <a
+                href="https://github.com/varunixrobotics"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/varun_varunix/"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.youtube.com/@Varunix-robotics"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="p-2 border border-white/20 rounded hover:border-cyber-blue hover:text-cyber-blue text-gray-100 hover:glow-blue transition-all duration-350 min-h-[40px] min-w-[40px] flex items-center justify-center bg-white/5"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Block 2: Location and Coordinates */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">02 // HQ LOCATIONS</h4>
-            <div className="font-mono text-xs text-gray-400 space-y-2.5">
+            <h4 className="font-mono text-[11px] text-cyber-purple font-bold uppercase tracking-widest">studying-currently-in</h4>
+            <div className="font-mono text-xs text-gray-200 space-y-2.5">
               <div>
-                <p className="text-white font-medium">NEO-TAIPEI ASSEMBLY R&D</p>
-                <p className="text-[10px] text-gray-500">25.0340N, 121.5645E</p>
+                <p className="text-white font-medium">Study at LOVELY PROFESSIONAL UNIVERSITY-INDIA</p>
+                <p className="text-[10px] text-cyber-blue/80 font-bold tracking-wider">31.2536° N, 75.7037° E</p>
               </div>
               <div>
-                <p className="text-white font-medium">TOKYO SUBSIDIARY LAB</p>
-                <p className="text-[10px] text-gray-500">35.6762N, 139.6503E</p>
+                <p className="text-white font-medium">Temporarily Unavailable</p>
+                <p className="text-[10px] text-cyber-blue/50 font-bold tracking-wider">----N, ----E</p>
               </div>
             </div>
           </div>
 
-          {/* Block 3: Engineering Stats */}
+          {/* Block 3: Engineering Focus */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">03 // SERVICE REGISTRY</h4>
-            <div className="font-mono text-xs text-gray-400 space-y-2">
-              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• JOINT-ACTUATION SYSTEMS</p>
-              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• SLAM autonomous NAVDRIVE</p>
-              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• NEURAL BIO-FEEDBACK API</p>
-              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• HARSH-ENVIRO COATING</p>
+            <h4 className="font-mono text-[11px] text-cyber-purple font-bold uppercase tracking-widest">engineering-focus</h4>
+            <div className="font-mono text-xs text-gray-200 space-y-2">
+              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• Hackathons</p>
+              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• Learning Python and ML</p>
+              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• Soft Robotics</p>
+              <p className="hover:text-cyber-blue transition-colors cursor-pointer">• BLDC and Drone engineering</p>
             </div>
           </div>
 
-          {/* Block 4: System Logs */}
+          {/* Block 4: System Logs / Diagnostics */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">04 // DIAGNOSTICS</h4>
-            <div className="bg-white/2 border border-white/5 p-3 rounded-sm font-mono text-[9px] text-gray-500 space-y-1">
+            <h4 className="font-mono text-[11px] text-cyber-purple font-bold uppercase tracking-widest">04 // DIAGNOSTICS</h4>
+            <div className="bg-white/5 border border-white/10 p-3 rounded-sm font-mono text-[9px] text-gray-200 space-y-1">
               <div className="flex justify-between">
                 <span>PORT_3000:</span>
                 <span className="text-cyber-blue font-bold">ONLINE</span>
@@ -127,12 +148,12 @@ export default function Footer() {
 
         {/* Bottom copyright segment */}
         <div className="flex flex-col sm:flex-row items-center justify-between border-t border-white/5 pt-8 text-center sm:text-left gap-4">
-          <div className="font-mono text-[9px] text-gray-600">
-            <span>© {new Date().getFullYear()} VARUNIX ROBOTICS CO. ALL RIGHT RESERVED TO CARBON-SILICON DIVISION.</span>
+          <div className="font-mono text-[9px] text-gray-400">
+            <span>© {new Date().getFullYear()} VARUNIX ROBOTICS CO. ALL RIGHTS RESERVED.</span>
           </div>
-          <div className="flex items-center gap-3 font-mono text-[8px] text-gray-600">
+          <div className="flex items-center gap-3 font-mono text-[8px] text-gray-400">
             <Shield className="w-3.5 h-3.5 text-cyber-purple" />
-            <span>ENCRYPTED SECURE SSL // DATA TRANSMISSION PROTOCOL INSECURE IN IFRAME</span>
+            <span>// SECURE DATA TRANSMISSION PROTOCOL INSECURE IN IFRAME</span>
           </div>
         </div>
 

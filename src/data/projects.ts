@@ -9,7 +9,7 @@ export const ProjectsData: Project[] = [
   {
     id: "nexus-valkyrie",
     title: "Nexus-9 Valkyrie",
-    category: "Bipedal Humanoid Class",
+    category: "Robotics",
     subtitle: "Tactical Explorer & Extreme Terrain Responder",
     shortDesc: "A bipedal humanoid robotics system engineered for autonomous deep-reconnaissance, high-payload transport, and swift evacuation in extreme environments.",
     description: "The Nexus-9 Valkyrie represents Varunix Robotics' flagship achievement in cybernetic human-mimetic layout. Operating on a proprietary quantum neural mesh, the Valkyrie adapts in real-time to shifting gravel, tectonic tremors, and sub-zero temperatures. It features hydraulic load amplifiers integrated into the lower chassis, providing swift acceleration upwards of 18 km/h while balancing payloads exceeding twice its core mass.",
@@ -32,7 +32,7 @@ export const ProjectsData: Project[] = [
   {
     id: "kronos-drone",
     title: "Kronos-X Quad-Rotor",
-    category: "Aerospace Vector Class",
+    category: "Drones",
     subtitle: "High-Speed Autonomous Transport & Cargo Platform",
     shortDesc: "A multi-vector aerial cargo vessel equipped with multi-axis vector thrusters, storm-stabilizing wings, and magnetic docking interfaces.",
     description: "Built to disrupt high-frequency metropolitan delivery and remote high-altitude resupply logistics, the Kronos-X stands as an unbeatable force in aerospace vector engineering. Its variable-geometry carbon fiber rotors auto-pitch up to 45 degrees, allowing it to traverse sheer wind currents, convective storms, and electromagnetic interference zones. When docked, it links into automated energy hubs to achieve a complete recharge in less than 120 seconds.",
@@ -55,7 +55,7 @@ export const ProjectsData: Project[] = [
   {
     id: "aegis-sentry",
     title: "Aegis Sentinel Mk.V",
-    category: "Autonomous Ground Sentry",
+    category: "Robotics",
     subtitle: "Intellectual Tactical Perimeter Guard & Shield Core",
     shortDesc: "All-terrain defensive armor crawler utilizing non-lethal mesh nets, sonic deterrents, and energy deflection shields.",
     description: "The Aegis Sentinel Mk.V is designed to operate in high-risk zones, providing impenetrable security perimeters for diplomatic installations, bio-vaults, and active rocket pads. Moving on a robust twelve-axis carbon crawler system, it negotiates vertical walls and gravel blockages with ease. Behind its armored plates lies a high-energy pulse shield generator that deflects physical debris and high-voltage static discharges.",
@@ -78,7 +78,7 @@ export const ProjectsData: Project[] = [
   {
     id: "orion-surgical",
     title: "Orion-V Surgical Arm",
-    category: "Precision Medical Robotics",
+    category: "Robotics",
     subtitle: "Synaptic-Integrated Sub-Millimeter Precision Arm",
     shortDesc: "A multi-jointed surgical arm utilizing real-time bio-feedback loop trackers, magnetic joints, and sub-micron steady-state holds.",
     description: "Reinventing micro-surgery, the Orion-V Surgical Core connects directly to neural-link bio-feedback processors, scaling down a surgeon's manual gestures by a factor of 1000. It compensates for minute human finger tremors entirely via micro-magnetic joints. The arm functions in complete autonomy during simple suturing or vascular mapping operations, with active AI monitoring that halts any vector movement if cardiac metrics fluctuate unexpectedly.",
@@ -97,5 +97,51 @@ export const ProjectsData: Project[] = [
       "Pico-injector surgical modules constructed from bio-compatible titanium alloys."
     ],
     blueprintText: "ORION_MED.DRV // PROTOCOL_NEURAL\n=================================\nTREMOR_OFFSET_FILTER: HIGH [100%]\nBIO_SCAN: STEADY [12000Hz]\nMAGNETIC_JOINTS: STABILIZED_SUB_MICRON\nPICO_INJECTORS: NOMINAL\nSYSTEM_FEEDBACK: ENGAGED [SURGEON_MUTUAL]"
+  },
+  {
+    id: "aether-kernel",
+    title: "Aether-OS Kernel",
+    category: "Software Projects",
+    subtitle: "Real-Time Operating System for Cybernetic Hardware",
+    shortDesc: "A high-performance microkernel RTOS featuring a lock-free scheduler, sub-nanosecond interrupt response, and secure process isolation.",
+    description: "Aether-OS is a state-of-the-art microkernel designed from the ground up for critical robotics, drones, and neural interfaces. It eliminates traditional operating system overhead by utilizing compile-time memory guarantees and an advanced lock-free execution queue, achieving unmatched predictability and speed under heavy multi-sensor processing loads.",
+    imageFallbackGradient: "from-emerald-950 via-slate-900 to-cyber-blue/20",
+    stats: [
+      { name: "Core Latency", value: "< 0.8 Microseconds" },
+      { name: "Code Footprint", value: "48 KB Compiled" },
+      { name: "Max Processes", value: "65,536 Concurrent" },
+      { name: "Memory Overhead", value: "< 0.2% Total RAM" }
+    ],
+    techTags: ["Rust/Assembly", "Microkernel RTOS", "Lock-free Scheduler", "Memory Isolation"],
+    specs: [
+      "Zero-copy message passing architecture for ultra-fast inter-process communication.",
+      "Dynamic memory pooling preventing runtime fragmentation and memory leaks.",
+      "Hardware-enforced capability-based security model for device driver sandboxing.",
+      "Integrated real-time telemetry tracing engine running at system level."
+    ],
+    blueprintText: "AETHER_OS.KERNEL // BOOT_VER_1.4\n================================\nMEM_RESERVE: OK [48 KB]\nSCHEDULER_INIT: LOCK_FREE_ACTIVE\nINTERRUPT_VECTOR: CALIBRATED [<0.8us]\nSANDBOX_ISOLATION: SECURED\nSTATUS: RUNNING [NO_ERRORS]"
+  },
+  {
+    id: "sol-rescue-swarm",
+    title: "Project Sol-Rescue",
+    category: "Hackathons",
+    subtitle: "Autonomous Search & Rescue Micro-Swarm",
+    shortDesc: "A deployable mesh-networked micro-drone swarm developed in 48 hours for localizing survival signatures in collapsed structures.",
+    description: "Winner of the Global Cyber-Robotics Hackathon 2026, Project Sol-Rescue showcases rapid prototyping of autonomous swarm behaviors. Utilizing off-the-shelf ultra-lightweight carbon parts, the micro-drones form an ad-hoc local mesh network that coordinates searches without external GPS or active internet connections, sharing telemetry to construct a 3D volumetric map of disaster areas.",
+    imageFallbackGradient: "from-orange-950 via-slate-900 to-cyber-purple/20",
+    stats: [
+      { name: "Hackathon Time", value: "48 Hours Build" },
+      { name: "Swarm Size", value: "8 Cooperating Units" },
+      { name: "Mesh Bandwidth", value: "120 Mbps Peer-to-Peer" },
+      { name: "Target Detection", value: "98.6% Accuracy" }
+    ],
+    techTags: ["Mesh Networking", "Edge AI Mapping", "Rapid Prototyping", "Cooperative Control"],
+    specs: [
+      "Distributed SLAM mapping algorithm operating across the active drone fleet.",
+      "Thermal signature detection engine using quantized edge-computed neural nets.",
+      "Decentralized consensus protocol for dynamic sector allocation.",
+      "Ultra-lightweight 3D printed carbon-reinforced skeleton."
+    ],
+    blueprintText: "SOL_RESCUE.SWARM // HACKATHON_PROJECT\n=====================================\nBUILD_DURATION: 48_HOURS [COMPLETE]\nSWARM_UNITS: 8_ACTIVE // CONNECTED\nMESH_BANDWIDTH: 120_MBPS_OK\nTARGET_LIDAR: ENGAGED [3D_GRID]\nDECENTRALIZED_CONSENSUS: STABLE"
   }
 ];

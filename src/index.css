@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+html, body {
+  background-color: #020617;
+  color: #ffffff;
+}
+
 @theme {
   --color-cyber-blue: #00fff9; /* Updated to Immersive UI vibrant cyan */
   --color-cyber-purple: #ff00c1; /* Updated to match Immersive UI neon pink/magenta */

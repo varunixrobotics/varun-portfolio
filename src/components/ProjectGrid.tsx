@@ -14,17 +14,17 @@ interface ProjectGridProps {
   onSelectProject: (project: Project) => void;
 }
 
-type FilterCategory = "ALL" | "Bipedal Humanoid Class" | "Aerospace Vector Class" | "Autonomous Ground Sentry" | "Precision Medical Robotics";
+type FilterCategory = "ALL" | "Hackathons" | "Robotics" | "Drones" | "Software Projects";
 
 export default function ProjectGrid({ onSelectProject }: ProjectGridProps) {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>("ALL");
 
   const categories: { label: string; value: FilterCategory }[] = [
-    { label: "ALL UNITS", value: "ALL" },
-    { label: "HUMANOID CORE", value: "Bipedal Humanoid Class" },
-    { label: "AEROSPACE VECTOR", value: "Aerospace Vector Class" },
-    { label: "GROUND DEFENSE", value: "Autonomous Ground Sentry" },
-    { label: "PRECISION MEDICINE", value: "Precision Medical Robotics" }
+    { label: "ALL", value: "ALL" },
+    { label: "HACKATHONS", value: "Hackathons" },
+    { label: "ROBOTICS", value: "Robotics" },
+    { label: "DRONES", value: "Drones" },
+    { label: "SOFTWARE PROJECTS", value: "Software Projects" }
   ];
 
   const filteredProjects = activeFilter === "ALL"

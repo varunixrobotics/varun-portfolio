@@ -17,7 +17,7 @@ export default function Hero({ onEnter }: HeroProps) {
   const [audioError, setAudioError] = useState(false);
   const [showEnterButton, setShowEnterButton] = useState(true);
   const [logoLoaded, setLogoLoaded] = useState(true);
-  
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -83,7 +83,7 @@ export default function Hero({ onEnter }: HeroProps) {
           document.addEventListener('keydown', startOnFirstInteraction, { once: true });
         });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleEnterExperience = () => {
@@ -105,8 +105,8 @@ export default function Hero({ onEnter }: HeroProps) {
   };
 
   return (
-    <div 
-      id="hero-header-section" 
+    <div
+      id="hero-header-section"
       className="relative w-full h-[100vh] min-h-[500px] flex flex-col items-center justify-center overflow-hidden bg-[#05040a] select-none"
     >
       {/* Background Video Stream */}
@@ -123,7 +123,7 @@ export default function Hero({ onEnter }: HeroProps) {
       {/* Cybernetic Grid/HUD Overlays for atmospheric coloring */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#080710]/20 via-[#0d0c1c]/40 to-[#080710] pointer-events-none"></div>
       <div className="absolute inset-0 z-0 cyber-grid opacity-15 mix-blend-color-dodge pointer-events-none"></div>
-      
+
       {/* Animated Static Scanline Line */}
       <div className="absolute top-0 left-0 w-full h-1 bg-cyber-blue/25 opacity-40 shadow-cyan-500 shadow-md animate-scanline pointer-events-none z-1"></div>
 
@@ -140,7 +140,7 @@ export default function Hero({ onEnter }: HeroProps) {
 
       {/* Main HUD Presentation Panel */}
       <div className="relative z-10 flex flex-col items-center justify-center px-4 w-full max-w-4xl text-center">
-        
+
         {/* Top telemetry lines */}
         <div className="flex items-center gap-2 mb-8 font-mono text-xs tracking-[0.25em] text-cyber-blue opacity-85 select-none uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-cyber-blue inline-block animate-ping"></span>
@@ -185,13 +185,13 @@ export default function Hero({ onEnter }: HeroProps) {
               <span className="hud-corner hud-tr" />
               <span className="hud-corner hud-bl" />
               <span className="hud-corner hud-br" />
-              
+
               <div className="flex items-center gap-12 max-sm:gap-4 justify-center w-full">
                 {/* Simulated twin robotic controllers */}
                 <div className="w-10 h-10 border border-cyber-blue/40 rounded-full flex items-center justify-center animate-pulse-slow">
                   <div className="w-6 h-6 border-2 border-dotted border-cyber-blue rounded-full"></div>
                 </div>
-                
+
                 <div className="text-center font-space">
                   <h1 className="text-4xl sm:text-6xl font-black italic tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-white to-cyber-purple drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
                     VARUNIX
@@ -205,7 +205,7 @@ export default function Hero({ onEnter }: HeroProps) {
                   <div className="w-6 h-6 border-2 border-dotted border-cyber-purple rounded-full"></div>
                 </div>
               </div>
-              
+
               <p className="font-mono text-[9px] text-gray-500 tracking-widest mt-4 uppercase">
                 TECHNOLOGY × INTELLIGENCE // CREATING THE FUTURE
               </p>
@@ -255,11 +255,10 @@ export default function Hero({ onEnter }: HeroProps) {
             <button
               id="audio-mute-toggle-btn"
               onClick={toggleAudioMute}
-              className={`flex items-center gap-2.5 px-3.5 py-2 border rounded-full font-mono text-[9px] tracking-widest uppercase transition-all duration-300 pointer-events-auto touch-manipulation min-h-[44px] min-w-[120px] justify-center ${
-                isPlayingAudio
+              className={`flex items-center gap-2.5 px-3.5 py-2 border rounded-full font-mono text-[9px] tracking-widest uppercase transition-all duration-300 pointer-events-auto touch-manipulation min-h-[44px] min-w-[120px] justify-center ${isPlayingAudio
                   ? "border-cyber-blue/30 bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20"
                   : "border-white/10 bg-white/2 text-gray-500 hover:bg-white/5"
-              }`}
+                }`}
             >
               {isPlayingAudio ? (
                 <>
