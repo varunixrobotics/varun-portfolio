@@ -1,7 +1,6 @@
 # Hi there, I'm Varun! 👋
 
 ![Varunix Banner](https://github.com/varunixrobotics/varun-searchbar/blob/main/youtube%20banner.png?raw=true)
-*(Note: Replace the image link above with the direct URL of your own banner or profile picture!)*
 
 I am a **1st-Year B.Tech Student** passionate about technology, coding, and building cool things. Welcome to my digital workspace! 🚀
 
@@ -29,7 +28,6 @@ I'm always open to networking, discussing tech, or just having a good chat. Find
 
 ## 🛠️ Languages & Tools I'm Exploring
 
-*(Add the tools you are currently learning here!)*
 * C / C++ / Python
 * HTML / CSS
 * Git & GitHub
